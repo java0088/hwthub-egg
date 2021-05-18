@@ -20,4 +20,10 @@ module.exports = app => {
 
   // 测试 MQTT
   app.emqtt.get('uav').route('/test/#', app.mqtt.controller.test.index)
+
+  // 测试二维码识别
+  // 生成二维码
+  router.get('/qrcode', controller.qrcode.index)
+  // 识别二维码
+  router.get('/getCode', controller.qrcode.getCode)
 };
