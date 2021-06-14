@@ -2,6 +2,8 @@ logs/
 npm-debug.log
 yarn-error.log
 node_modules/
+node_modules.rar
+egg-example.zip
 package-lock.json
 yarn.lock
 coverage/
