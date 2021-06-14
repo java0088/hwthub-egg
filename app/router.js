@@ -6,13 +6,15 @@
 module.exports = app => {
   const { router, controller, io } = app;
   // 应用启动前回调函数
-  // app.beforeStart(async () => {
-  //   // 如果表不存在就创建
-  //   await app.model.sync({ alter: false })
-  // })
+  app.beforeStart(async () => {
+    // 如果表不存在就创建
+    await app.model.sync({ alter: false })
+  })
 
   // 测试 MQTT
   app.emqtt.get('uav').route('/test/#', app.mqtt.controller.test.index)
+  
+  
 
   // 测试二维码识别
   // 生成二维码
@@ -42,6 +44,8 @@ module.exports = app => {
 
   // 测试
   router.get('/test', controller.client.test)
+  router.get('/getUserList', controller.home.getUserList)
+  router.get('/sendMQTT', controller.home.sendMQTT)
 
   io.of('/').route('chat', io.controller.home.index)
 }

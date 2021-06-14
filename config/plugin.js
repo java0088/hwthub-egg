@@ -3,10 +3,10 @@
 /** @type Egg.EggPlugin */
 module.exports = {
   // 配置mysql数据库
-  // sequelize: {
-  //   enable: true,
-  //   package: 'egg-sequelize'
-  // },
+  sequelize: {
+    enable: true,
+    package: 'egg-sequelize'
+  },
   // 配置redis
   redis: {
     enable: true,

@@ -26,8 +26,8 @@ module.exports = appInfo => {
   config.sequelize = {
     dialect: 'mysql',
     host: BASE_URL,
-    port: 3306,
-    database: 'hwthub',
+    port: 3309,
+    database: 'hwt_hub',
     username: 'root',
     password: '123456',
     define: { // model的全局配置
